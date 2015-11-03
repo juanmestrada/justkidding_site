@@ -17,6 +17,74 @@ import _ from 'underscore'
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 
+
+
+
+
+
+
+$(document).ready(function(){
+  window.current = 1;
+  setActiveBtn(current);
+  window.pause = false;
+  window.sliderTimer = setInterval( go, 5000);
+
+  $( "#home-banner" ).hover(
+    function() {
+      pause = true;
+      //console.log("pause");
+    }, function() {
+      pause = false;
+      //console.log("un-pause");
+    }
+  );
+});
+
+/* PARAMS: next index (optional), current index (optional) */
+function go(){
+  if(pause){
+    restartTimer();
+    return false;
+  }
+
+  if(arguments[1]){
+    restartTimer();
+  }
+
+  var picWidth = 960,
+      max = 10,
+      bumpit = "",
+      /* HANDLE THE PREV() INDEXING BELOW 1 */
+      pos = (arguments[0] === undefined) ? ++current : ( arguments[0] === 0 ? max : arguments[0]);
+  	current = (arguments[1] === undefined) ? current : ( arguments[0] === 0 ? max : arguments[0]);
+
+  setActiveBtn(current);
+
+  if( pos <= max ){
+    bumpit = ( pos - 1 ) * picWidth;
+    bumpit = "-" + bumpit + "px";
+    $("#home-banner ul").animate( {left: bumpit }, 1000 );
+  } else {
+    current = 1;
+    go(1);
+  }
+}
+
+function restartTimer() {
+  clearInterval(sliderTimer);
+  sliderTimer = setInterval( go, 5000);
+}
+
+function setActiveBtn(index){
+  $("#slider_btns li").removeClass("active").not( $("#slider_btns li").eq(index - 1).addClass("active") );
+}
+
+
+
+
+
+
+
 class NavHeader extends React.Component{
 	render() {
 		return (<div>
@@ -44,7 +112,6 @@ class NavHeader extends React.Component{
 							</ul>
 						</li>	
 						<li><a href="#crew">CREW</a></li>
-						<li><a href="#gallery">GALLERY</a></li>
 						<li><a href="http://justkiddingfilms.bigcartel.com/">STORE</a></li>
 						<li><a href="#contact">CONTACT</a></li>
 					</ul>
@@ -58,41 +125,124 @@ class LinksView extends React.Component{
 	render() {
 		return (<div>
 			<ul id="links-container">
-				<li id="links-facebook"><a href=""><img src="../images/facebook.png" /></a></li>
-				<li id="links-twitter"><a href=""><img src="../images/twitter2.png" /></a></li>
-				<li id="links-instagram"><a href=""><img src="../images/instagram.png" /></a></li>
-				<li id="links-youtube"><a href=""><img src="../images/YouTube.png" /></a></li>
+				<li id="links-facebook"><a href="https://www.facebook.com/JustKiddingFilms"><img src="../images/facebook.png" /></a></li>
+				<li id="links-twitter"><a href="https://twitter.com/jkfilms"><img src="../images/twitter2.png" /></a></li>
+				<li id="links-instagram"><a href="http://instagram.com/jkfilms/"><img src="../images/instagram.png" /></a></li>
+				<li id="links-youtube"><a href="https://www.youtube.com/user/JustKiddingFilms"><img src="../images/YouTube.png" /></a></li>
 			</ul>
 	</div>)
 	}
 }
 
 class HomeView extends React.Component{
+	 constructor(props){
+        super(props)
+        this.rerender = () => this.forceUpdate()
+    }
+    componentDidMount(){
+
+		twttr.widgets.load();
+	}
+	go(){
+		if(pause){
+			restartTimer();
+			return false;
+		}
+
+		if(arguments[1]){
+			restartTimer();
+		}
+
+		var picWidth = 960,
+			max = 10,
+			bumpit = "",
+		/* HANDLE THE PREV() INDEXING BELOW 1 */
+		pos = (arguments[0] === undefined) ? ++current : ( arguments[0] === 0 ? max : arguments[0]);
+		current = (arguments[1] === undefined) ? current : ( arguments[0] === 0 ? max : arguments[0]);
+
+		setActiveBtn(current);
+
+		if( pos <= max ){
+			bumpit = ( pos - 1 ) * picWidth;
+			bumpit = "-" + bumpit + "px";
+			$("#home-banner ul").animate( {left: bumpit }, 1000 );
+		} else {
+			current = 1;
+			go(1);
+		}
+	}
+	prev(){
+		var prevIndex = current - 1;
+  		go(prevIndex, prevIndex);
+	}
+	next(){
+
+		var nextIndex = current + 1;
+		go(nextIndex, nextIndex);
+
+	}
 	render() {
 		return (<div>
 			<NavHeader />
 			<LinksView />
 			<div id="home-container">
-				<p>JustKiddingFilms is a comedic phenomenon known to unabashedly tackle social, contemporary, and cultural issues, while ingeniously capturing and playing to universal sentiments. They strike a remarkable balance between stimulating and entertaining, garnering them an international fanbase of 125 million views and 706,000+ subscribers on YouTube.</p>
+				<div id="home-banner">
+					<ul>
+						<li className="hb-films"><a href="https://www.youtube.com/user/JustKiddingFilms"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/03/justkiddingfilms.jpg" /></a></li>
+						<li className="hb-barb"><a href="http://barbellbrigade.com/"><img src="../images/barbell.jpeg" /></a></li>
+						<li className="hb-party"><a href=""><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/05/justkiddinggamer.jpg" /></a></li>
+						<li className="hb-news"><a href="https://www.youtube.com/user/JustKiddingNews"><img src="../images/jknewsbanner.jpg" /></a></li>
+						<li className="hb-bart"><a href="https://twitter.com/BartKwan"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/02/bart-copy.jpg" /></a></li>
+						<li className="hb-joe"><a href="https://twitter.com/joverdose"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/03/Joe-Banner.jpg" /></a></li>
+						<li className="hb-geo"><a href="https://twitter.com/Geo_Antoinette"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/02/Geovanna-Antoinette.jpg" /></a></li>
+						<li className="hb-casey"><a href="https://twitter.com/chanmanprod"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/02/Casey_Chan.jpg" /></a></li>
+						<li className="hb-tiff"><a href="https://www.youtube.com/channel/UCY-TNU5jYhB6E4zfKomi1wg"><img src="../images/tandcbanner.png" /></a></li>
+						<li className="hb-julia"><a href="https://instagram.com/xblueapplez/"><img src="../images/juliabanner.jpg" /></a></li>
+					</ul>
+
+				</div>
+				<div className="buttonBox">	
+					<ul id="slider_btns">
+						<li onClick={ () => this.go(1,1)}></li>
+						<li onClick={ () => this.go(2,2)}></li>
+						<li onClick={ () => this.go(3,3)}></li>
+						<li onClick={ () => this.go(4,4)}></li>
+						<li onClick={ () => this.go(5,5)}></li>
+						<li onClick={ () => this.go(6,6)}></li>
+						<li onClick={ () => this.go(7,7)}></li>
+						<li onClick={ () => this.go(8,8)}></li>
+						<li onClick={ () => this.go(9,9)}></li>
+						<li onClick={ () => this.go(10,10)}></li>
+					</ul>	
+				</div>
+				<br />
+				<div className="home-info">
+					<p>JustKiddingFilms is a comedic phenomenon known to unabashedly tackle social, contemporary, and cultural issues, while ingeniously capturing and playing to universal sentiments. They strike a remarkable balance between stimulating and entertaining, garnering them an international fanbase of 125 million views and 706,000+ subscribers on YouTube.</p>
+					<br />
+					<p>Integer consequat rhoncus dolor, tristique blandit diam gravida sed. Donec faucibus quis est in semper. Nunc malesuada arcu eu massa viverra, a suscipit est cursus. Aenean id libero a nulla malesuada placerat. Pellentesque vehicula ligula ac arcu lacinia blandit id ut mi. Sed mi purus, interdum a augue sed, venenatis ultricies ipsum. Nunc quis arcu vitae sapien finibus imperdiet sit amet a odio. Mauris a odio at arcu gravida venenatis eget non lectus. Ut a eleifend nulla, nec suscipit lectus. Quisque suscipit interdum lorem, blandit malesuada quam laoreet at. Integer posuere eleifend quam, nec venenatis neque vulputate eget.</p>
+					<br />
+					<p>Integer consequat rhoncus dolor, tristique blandit diam gravida sed. Donec faucibus quis est in semper. Nunc malesuada arcu eu massa viverra, a suscipit est cursus. Aenean id libero a nulla malesuada placerat. Pellentesque vehicula ligula ac arcu lacinia blandit id ut mi. Sed mi purus, interdum a augue sed, venenatis ultricies ipsum. Nunc quis arcu vitae sapien finibus imperdiet sit amet a odio. Mauris a odio at arcu gravida venenatis eget non lectus. Ut a eleifend nulla, nec suscipit lectus. Quisque suscipit interdum lorem, blandit malesuada quam laoreet at. Integer posuere eleifend quam, nec venenatis neque vulputate eget.</p>
+
+				</div>
 			</div>	
-			<div id="home-tweets">
-				<a className="twitter-timeline" href="https://twitter.com/JKFilms" data-widget-id="660182203867901952">Tweets by @JKFilms</a>
+			<div  className="home-tweets">
+				<a className="twitter-timeline" href={this.props.link} data-widget-id={this.props.widgetId}>Tweets by @JKFilms</a>
 			</div>
 		</div>)
 	}
 }
 
 class AtfView extends React.Component{
-	_startSlider(){
-	
-
-
+	componentDidMount(){
+    	
+		twttr.widgets.load();
 	}
+	
 	render() {
 		return (<div>
 			<NavHeader />
 			<LinksView />
-			<div id="atf-container" onLoad={ () => this._startSlider() }>
+			<div id="atf-container">
 				<div id="atf-banner"></div>
 				<div id="atf-info">
 					<h3>Welcome to Ask the Feels</h3>
@@ -118,6 +268,10 @@ class AtfView extends React.Component{
 }
 
 class JknewsView extends React.Component{
+	componentDidMount(){
+    	
+		twttr.widgets.load();
+	}
 	render() {
 		return (<div>
 			<NavHeader />
@@ -140,17 +294,24 @@ class JknewsView extends React.Component{
 }
 
 class JkpartyView extends React.Component{
+	componentDidMount(){
+    	
+		twttr.widgets.load();
+	}
 	render() {
 		return (<div>
 			<NavHeader />
 			<LinksView />
-			<div id="jkparty-container">
+			<div id="jkparty-container" >
 				<div id="jkparty-banner"></div>
 				<div id="jkparty-info">
 					<h3>Welcome to JustKiddingParty</h3>
-					<p>Watch the crew act crazy</p>
+					<p>Watch the crew play games, do challenges, but overall act crazy</p>
+					<br />
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 				</div>
-				<div id="jkparty-soundcloud">
+				<div id="jkparty-youtube">
+					<iframe className="jkparty-video" width="560" height="315" src="https://www.youtube.com/embed/uQ3b1P2swcw?list=PLhR2n_62Lv1cYgOrt4icNuzmB69EfFAay" frameBorder="0" allowfullscreen="true"></iframe>	
 				</div>
 			</div>
 			<div id="jkparty-twitter">
@@ -365,6 +526,7 @@ class CrewView extends React.Component{
 	render() {
 		return (<div>
 			<NavHeader/>
+			<LinksView />
 			<div id="crew-container">
 				<div className="crew-img-container">
 					<ul>
@@ -449,7 +611,8 @@ var Router = Backbone.Router.extend ({
 		React.render(<CrewView />, document.body);
 	},
 	home: () => {
-		React.render(<HomeView />, document.body);
+
+		React.render(<HomeView link='https://twitter.com/JKFilms' widgetId='660182203867901952'/>, document.body);
 	},
 	initialize:function() {
         Backbone.history.start()

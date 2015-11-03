@@ -100,20 +100,22 @@ img {
 }
 img {
     max-width: 100%;
+
 }
 
 html{
     background-color: black;
+    height: 100%;
+    overflow: auto;
 }
 
 body{
-    
-    height: 810px;
     background-image: url(../images/jkf_seal_logo.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
-
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    height: 150%;
 }
 
 .header{
@@ -127,6 +129,9 @@ body{
     .header-top{
         height: 40px;
         overflow: auto;
+        width: 65%;
+        margin: auto;
+
         .header-logo{
             float: left;
             width: 60%;
@@ -138,6 +143,7 @@ body{
             float: right;
             width: 40%;
             padding: 10px;
+
         }
     }
     
@@ -151,7 +157,7 @@ body{
             margin: 0;
             li{
                 float: left;
-                width: 13%;
+                width: 16.5%;
                 
                 a{
                     text-decoration: none;
@@ -209,15 +215,86 @@ body{
 
 
 /*Home */
+
+#banner-container{
+    width: 90%;
+    margin: auto;
+
+}
 #home-container{
-    width: 70%;
+    width: 75%;
+    margin-top: 110px;
+    margin-left: 45px;
+    background-color: rgba(255,255,255, .95);
+    #home-banner{
+        overflow: hidden;
+        height: 320px;
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 9602px;
+            height: inherit;
+            position: relative;
+            li{
+                display: inline;
+                width: 100%;
+                img{
+                    float: left;
+                }
+            }
+        }
+    }
+    .home-info{
+        padding:10px 40px;
+        
+    }
 }
 
-#home-tweets{
+#slider_btns {
+  list-style: none;
+  width: 80%;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+#slider_btns li {
+  display: inline-block;
+  background-color: rgba(0,0,0,0.4);
+  height: 13px;
+  width: 13px;
+  margin: 5px;
+  border: 2px solid silver;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#slider_btns li.active {
+  height: 15px;
+  width: 15px;
+}
+
+.buttonBox{
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    
+    top: 400px;
+    ul{
+        float: left;
+    }
+}
+
+
+
+.home-tweets{
     width: 20%;
     float: right;
     position: fixed;
     right: 10px;
+    top: 0;
+    margin-top: 110px;
 }
 /**/
 
@@ -467,6 +544,7 @@ body{
     background-color: rgba(255,255,255, .97);
     margin-top: 105px;
     margin-left: 40px;
+    padding-bottom: 50px;
     #jkparty-banner{
         width: 100%;
         height: 150px;
@@ -478,8 +556,14 @@ body{
     #jkparty-info{
         padding: 20px;
     }
-    #jkparty-soundcloud{
-        padding: 20px;
+    #jkparty-youtube{
+        
+        background-image: url(../images/partybanner.png);
+        background-repeat: no-repeat;
+        .jkparty-video{
+            display: block;
+            margin: auto;
+        }
     }
     
 }
@@ -550,7 +634,7 @@ body{
             
             }
             li:hover{
-                padding: 4px;
+                
                 img{
 
                 }
