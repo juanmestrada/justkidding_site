@@ -255,7 +255,7 @@ class AtfView extends React.Component{
 				<div id="atf-lower">
 					<div id="slider">
 						
-					<iframe src="http://snapwidget.com/sl/?u=YXNrdGhlZmVlbHN8aW58NTAwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=011115" title="Instagram Widget" className="snapwidget-widget" allowTransparency="true" frameBorder="0" scrolling="no" ></iframe>
+					<iframe src="https://snapwidget.com/sl/?u=YXNrdGhlZmVlbHN8aW58NTAwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=011115" title="Instagram Widget" className="snapwidget-widget" allowTransparency="true" frameBorder="0" scrolling="no" ></iframe>
 					</div>		
 				</div>
 				
