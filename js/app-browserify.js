@@ -24,6 +24,7 @@ import _ from 'underscore'
 
 
 $(document).ready(function(){
+
   window.current = 1;
   setActiveBtn(current);
   window.pause = false;
@@ -95,7 +96,7 @@ class NavHeader extends React.Component{
 						<img src="http://www.justkiddingfilms.net/wp-content/themes/v2/images/logo_primary.jpg"/>
 					</div>
 					<div className="header-tag">
-						<img src="http://www.justkiddingfilms.net/wp-content/themes/v2/images/tagline.png"/>
+						<img src="tagline.png"/>
 					</div>	
 				</div>
 				<hr/>	
@@ -140,7 +141,7 @@ class HomeView extends React.Component{
         this.rerender = () => this.forceUpdate()
     }
     componentDidMount(){
-
+    	console.log('test')
 		twttr.widgets.load();
 	}
 	go(){
@@ -189,15 +190,15 @@ class HomeView extends React.Component{
 				<div id="home-banner">
 					<ul>
 						<li className="hb-films"><a href="https://www.youtube.com/user/JustKiddingFilms"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/03/justkiddingfilms.jpg" /></a></li>
-						<li className="hb-barb"><a href="http://barbellbrigade.com/"><img src="../images/barbell.jpeg" /></a></li>
+						<li className="hb-barb"><a href="http://barbellbrigade.com/"><img src="./images/barbell.jpeg" /></a></li>
 						<li className="hb-party"><a href=""><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/05/justkiddinggamer.jpg" /></a></li>
-						<li className="hb-news"><a href="https://www.youtube.com/user/JustKiddingNews"><img src="../images/jknewsbanner.jpg" /></a></li>
+						<li className="hb-news"><a href="https://www.youtube.com/user/JustKiddingNews"><img src="./images/jknewsbanner.jpg" /></a></li>
 						<li className="hb-bart"><a href="https://twitter.com/BartKwan"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/02/bart-copy.jpg" /></a></li>
 						<li className="hb-joe"><a href="https://twitter.com/joverdose"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/03/Joe-Banner.jpg" /></a></li>
 						<li className="hb-geo"><a href="https://twitter.com/Geo_Antoinette"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/02/Geovanna-Antoinette.jpg" /></a></li>
 						<li className="hb-casey"><a href="https://twitter.com/chanmanprod"><img src="http://www.justkiddingfilms.net/wp-content/uploads/2012/02/Casey_Chan.jpg" /></a></li>
-						<li className="hb-tiff"><a href="https://www.youtube.com/channel/UCY-TNU5jYhB6E4zfKomi1wg"><img src="../images/tandcbanner.png" /></a></li>
-						<li className="hb-julia"><a href="https://instagram.com/xblueapplez/"><img src="../images/juliabanner.jpg" /></a></li>
+						<li className="hb-tiff"><a href="https://www.youtube.com/channel/UCY-TNU5jYhB6E4zfKomi1wg"><img src="./images/tandcbanner.png" /></a></li>
+						<li className="hb-julia"><a href="https://instagram.com/xblueapplez/"><img src="./images/juliayoutubebanner.png" /></a></li>
 					</ul>
 
 				</div>
@@ -391,7 +392,7 @@ class JkgamerView extends React.Component{
 		}
 		else if(n==8){
 			$('.jkgamer-right').html('Ryan Hasegawa')
-			$('.jkgamer-img-right').attr('src', '')
+			$('.jkgamer-img-right').attr('src', './images/ryan1.png')
 			$(".gaming-history p").html('No info found')
 			$('.preferred-platform').html('No info found')
 			$(".games-played").html('No info found')
@@ -473,15 +474,15 @@ class CrewView extends React.Component{
 		e.preventDefault()
 
 		if(n==1){
-			$(".crew-info-img img ").attr("src",'https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/11373540_538526442963020_43538073_a.jpg');
+			$(".crew-info-img img ").attr("src",'./images/joshheadshot.jpg');
 			$('.crew-info-name h3').html('Josh Osei')
 			$('.crew-info-name p').html('CAST/ACTOR')
-			$('.crew-info-bottom p').html('Josh is the nicest guy you will ever meet, insert more Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+			$('.crew-info-bottom p').html('Josh is the nicest of the jkcrew, insert more Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
 			$('.crew-info-links .instagram').attr('href', 'https://instagram.com/dubhalo/')
 			$('.crew-info-links .youtube').attr('href', 'https://www.youtube.com/user/JustKiddingParty')
 			$('.crew-info-links .twitter').attr('href', 'https://twitter.com/JKFilms')
 		}else if(n==2){
-			$(".crew-info-img img ").attr("src",'https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/s150x150/11248740_1644648675822021_1542276627_a.jpg');
+			$(".crew-info-img img ").attr("src",'./images/tiffheadshot.jpg');
 			$('.crew-info-name h3').html('Tiffany del Real')
 			$('.crew-info-name p').html('CAST/MERCH')
 			$('.crew-info-bottom p').html('Tiffany blablaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
@@ -489,7 +490,7 @@ class CrewView extends React.Component{
 			$('.crew-info-links .youtube').attr('href', 'https://www.youtube.com/channel/UCY-TNU5jYhB6E4zfKomi1wg')
 			$('.crew-info-links .twitter').attr('href', 'https://twitter.com/real_tiff')
 		}else if(n==3){
-			$(".crew-info-img img ").attr("src",'https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/11349315_726461134147633_343364563_a.jpg');
+			$(".crew-info-img img ").attr("src",'./images/joeheadshot.jpg');
 			$('.crew-info-name h3').html('Joe Jo')
 			$('.crew-info-name p').html('CO-FOUNDER//WRITER/DIRECTOR/CAST')
 			$('.crew-info-bottom p').html('Living la vida loca, renaissance man, wish granter, and dog whisperer')
@@ -497,7 +498,7 @@ class CrewView extends React.Component{
 			$('.crew-info-links .youtube').attr('href', 'https://www.youtube.com/user/theuncochin')
 			$('.crew-info-links .twitter').attr('href', 'https://twitter.com/joverdose')
 		}else if(n==4){
-			$(".crew-info-img img ").attr("src",'https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/11055874_421765964658905_2097866349_a.jpg');
+			$(".crew-info-img img ").attr("src",'./images/bartheadshot.jpg');
 			$('.crew-info-name h3').html('Bart Kwan')
 			$('.crew-info-name p').html('CO-FOUNDER/WRITER/DIRECTOR/CAST')
 			$('.crew-info-bottom p').html('Raised by wolves but nurtured by Mormons, Bart has rapidly become the most distinguished root beer float authority. Armed with extreme flexibility and incredible drive, Bart enjoys petting camels and is 2 feet away from doing the splits')
@@ -506,15 +507,15 @@ class CrewView extends React.Component{
 			$('.crew-info-links .twitter').attr('href', 'https://twitter.com/bartkwan')
 		}
 		else if(n==5){
-			$(".crew-info-img img ").attr("src",'https://scontent-dfw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-19/s150x150/11809808_555221697958216_1274665466_a.jpg');
+			$(".crew-info-img img ").attr("src",'./images/geoheadshot.jpg');
 			$('.crew-info-name h3').html('Geo Kwan')
 			$('.crew-info-name p').html('PR/MARKETING/PRODUCER/BOOKING/CAST')
-			$('.crew-info-bottom p').html('Not to be mistaken for David, is immune to the pheromones of South Africa.As deadly as a firefly on a Saturday night, Geo has been known to smack a bitch or two. I love candy.')
+			$('.crew-info-bottom p').html('Not to be mistaken for David, is immune to the pheromones of South Africa. As deadly as a firefly on a Saturday night, Geo has been known to smack a bitch or two. I love candy.')
 			$('.crew-info-links .instagram').attr('href', 'https://instagram.com/geo_antoinette/')
 			$('.crew-info-links .youtube').attr('href', 'https://www.youtube.com/user/GeovannaAntoinette')
 			$('.crew-info-links .twitter').attr('href', 'https://twitter.com/Geo_Antoinette')
 		}else if(n==6){
-			$(".crew-info-img img ").attr("src",'https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/11848848_1647557055485664_587084931_a.jpg');
+			$(".crew-info-img img ").attr("src",'./images/juliaheadshot.jpg');
 			$('.crew-info-name h3').html('Julia Chow')
 			$('.crew-info-name p').html('CAST/DIRECTOR/PRODUCER')
 			$('.crew-info-bottom p').html('Insert info about Hoolia here Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ')
