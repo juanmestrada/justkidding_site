@@ -480,7 +480,7 @@ var HomeView = (function (_React$Component3) {
 								_react2["default"].createElement(
 									"a",
 									{ href: "https://instagram.com/xblueapplez/" },
-									_react2["default"].createElement("img", { src: "../images/juliabanner.jpg" })
+									_react2["default"].createElement("img", { src: "../images/juliayoutubebanner.png" })
 								)
 							)
 						)
@@ -819,18 +819,18 @@ var JkgamerView = (function (_React$Component7) {
 				(0, _jquery2["default"])(".jkgamer-img-left").attr("src", "../images/sean.png");
 				(0, _jquery2["default"])(".gaming-history p").html("No info found");
 				(0, _jquery2["default"])(".preferred-platform").html("No info found");
-				(0, _jquery2["default"])(".games-played").html("No info found");
-				(0, _jquery2["default"])(".games-now").html("No info found");
+				(0, _jquery2["default"])(".games-played").html("Tom Clancy's Ghost Recon Phantoms.<br />Borderlands 2. <br />Left 4 Dead 2.<br />Evolve. <br />BioShock Infinite. <br />PAYDAY 2.<br />Batman: Arkham City GOTY.<br />");
+				(0, _jquery2["default"])(".games-now").html("Rocket League.<br /> Fallout 4.<br />");
 				(0, _jquery2["default"])(".games-interested").html("No info found");
 				(0, _jquery2["default"])(".steam-link").attr("href", "http://steamcommunity.com/id/LeaferSN");
 			} else if (n == 4) {
 				(0, _jquery2["default"])(".jkgamer-right").html("Devin White");
 				(0, _jquery2["default"])(".jkgamer-img-right").attr("src", "../images/devin.png");
-				(0, _jquery2["default"])(".gaming-history p").html("No info found");
+				(0, _jquery2["default"])(".gaming-history p").html("Fallout 4. <br/>Fallout: New Vegas.<br />PAYDAY 2.<br /> XCOM: Enemy Unknown.<br />");
 				(0, _jquery2["default"])(".preferred-platform").html("No info found");
 				(0, _jquery2["default"])(".games-played").html("No info found");
-				(0, _jquery2["default"])(".games-now").html("No info found");
-				(0, _jquery2["default"])(".games-interested").html("No info found");
+				(0, _jquery2["default"])(".games-now").html("Brawlhalla.<br />Rocket League.<br />PAYDAY 2.<br />The Ship.<br />");
+				(0, _jquery2["default"])(".games-interested").html("Wasteland 2.<br /> Dynasty Warriors 8 - Empires.<br />");
 				(0, _jquery2["default"])(".steam-link").attr("href", "http://steamcommunity.com/id/kidinferno");
 			} else if (n == 5) {
 				(0, _jquery2["default"])(".jkgamer-right").html("Byron Montilla");
@@ -861,7 +861,7 @@ var JkgamerView = (function (_React$Component7) {
 				(0, _jquery2["default"])(".steam-link").attr("href", "");
 			} else if (n == 8) {
 				(0, _jquery2["default"])(".jkgamer-right").html("Ryan Hasegawa");
-				(0, _jquery2["default"])(".jkgamer-img-right").attr("src", "");
+				(0, _jquery2["default"])(".jkgamer-img-right").attr("src", "./images/ryan1.png");
 				(0, _jquery2["default"])(".gaming-history p").html("No info found");
 				(0, _jquery2["default"])(".preferred-platform").html("No info found");
 				(0, _jquery2["default"])(".games-played").html("No info found");
@@ -944,7 +944,7 @@ var JkgamerView = (function (_React$Component7) {
 									{ id: "jkg-tom", onMouseOver: function (e) {
 											return _this3._getPic(e, 1);
 										} },
-									_react2["default"].createElement("img", { src: "https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/l/t51.2885-19/11899458_1630002033926711_2045681388_a.jpg" })
+									_react2["default"].createElement("img", { src: "./images/tommyheadshot.jpg" })
 								),
 								_react2["default"].createElement(
 									"li",
@@ -958,14 +958,14 @@ var JkgamerView = (function (_React$Component7) {
 									{ id: "jkg-can", onMouseOver: function (e) {
 											return _this3._getPic(e, 2);
 										} },
-									_react2["default"].createElement("img", { src: "https://pbs.twimg.com/profile_images/614907845201412096/Eqckvvdd_400x400.jpg" })
+									_react2["default"].createElement("img", { src: "./images/canheadshot.jpg" })
 								),
 								_react2["default"].createElement(
 									"li",
 									{ id: "jkg-sean", onMouseOver: function (e) {
 											return _this3._getPic(e, 3);
 										} },
-									_react2["default"].createElement("img", { src: "https://scontent-dfw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-19/s150x150/11380103_517422731741233_678232403_a.jpg" })
+									_react2["default"].createElement("img", { src: "./images/seanheadshot.jpg" })
 								),
 								_react2["default"].createElement(
 									"li",
@@ -979,7 +979,7 @@ var JkgamerView = (function (_React$Component7) {
 									{ id: "jkg-byron", onMouseOver: function (e) {
 											return _this3._getPic(e, 5);
 										} },
-									_react2["default"].createElement("img", { src: "https://scontent-dfw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-19/s150x150/11909189_897003660368630_1557104799_a.jpg" })
+									_react2["default"].createElement("img", { src: "./images/byronheadshot.jpg" })
 								),
 								_react2["default"].createElement(
 									"li",
@@ -993,7 +993,7 @@ var JkgamerView = (function (_React$Component7) {
 									{ id: "jkg-ryan", onMouseOver: function (e) {
 											return _this3._getPic(e, 8);
 										} },
-									_react2["default"].createElement("img", { src: "https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/s150x150/11909968_502987243199133_504663725_a.jpg" })
+									_react2["default"].createElement("img", { src: "./images/ryanheadshot.jpg" })
 								)
 							)
 						)
@@ -1072,15 +1072,15 @@ var CrewView = (function (_React$Component8) {
 			e.preventDefault();
 
 			if (n == 1) {
-				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/11373540_538526442963020_43538073_a.jpg");
+				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "./images/joshheadshot.jpg");
 				(0, _jquery2["default"])(".crew-info-name h3").html("Josh Osei");
 				(0, _jquery2["default"])(".crew-info-name p").html("CAST/ACTOR");
-				(0, _jquery2["default"])(".crew-info-bottom p").html("Josh is the nicest guy you will ever meet, insert more Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+				(0, _jquery2["default"])(".crew-info-bottom p").html("Josh is the nicest of the jkcrew, insert more Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
 				(0, _jquery2["default"])(".crew-info-links .instagram").attr("href", "https://instagram.com/dubhalo/");
 				(0, _jquery2["default"])(".crew-info-links .youtube").attr("href", "https://www.youtube.com/user/JustKiddingParty");
 				(0, _jquery2["default"])(".crew-info-links .twitter").attr("href", "https://twitter.com/JKFilms");
 			} else if (n == 2) {
-				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-19/s150x150/11248740_1644648675822021_1542276627_a.jpg");
+				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "./images/tiffheadshot.jpg");
 				(0, _jquery2["default"])(".crew-info-name h3").html("Tiffany del Real");
 				(0, _jquery2["default"])(".crew-info-name p").html("CAST/MERCH");
 				(0, _jquery2["default"])(".crew-info-bottom p").html("Tiffany blablaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
@@ -1088,7 +1088,7 @@ var CrewView = (function (_React$Component8) {
 				(0, _jquery2["default"])(".crew-info-links .youtube").attr("href", "https://www.youtube.com/channel/UCY-TNU5jYhB6E4zfKomi1wg");
 				(0, _jquery2["default"])(".crew-info-links .twitter").attr("href", "https://twitter.com/real_tiff");
 			} else if (n == 3) {
-				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/11349315_726461134147633_343364563_a.jpg");
+				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "./images/joeheadshot.jpg");
 				(0, _jquery2["default"])(".crew-info-name h3").html("Joe Jo");
 				(0, _jquery2["default"])(".crew-info-name p").html("CO-FOUNDER//WRITER/DIRECTOR/CAST");
 				(0, _jquery2["default"])(".crew-info-bottom p").html("Living la vida loca, renaissance man, wish granter, and dog whisperer");
@@ -1096,7 +1096,7 @@ var CrewView = (function (_React$Component8) {
 				(0, _jquery2["default"])(".crew-info-links .youtube").attr("href", "https://www.youtube.com/user/theuncochin");
 				(0, _jquery2["default"])(".crew-info-links .twitter").attr("href", "https://twitter.com/joverdose");
 			} else if (n == 4) {
-				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xfp1/t51.2885-19/11055874_421765964658905_2097866349_a.jpg");
+				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "./images/bartheadshot.jpg");
 				(0, _jquery2["default"])(".crew-info-name h3").html("Bart Kwan");
 				(0, _jquery2["default"])(".crew-info-name p").html("CO-FOUNDER/WRITER/DIRECTOR/CAST");
 				(0, _jquery2["default"])(".crew-info-bottom p").html("Raised by wolves but nurtured by Mormons, Bart has rapidly become the most distinguished root beer float authority. Armed with extreme flexibility and incredible drive, Bart enjoys petting camels and is 2 feet away from doing the splits");
@@ -1104,15 +1104,15 @@ var CrewView = (function (_React$Component8) {
 				(0, _jquery2["default"])(".crew-info-links .youtube").attr("href", "https://www.youtube.com/user/bartkwan");
 				(0, _jquery2["default"])(".crew-info-links .twitter").attr("href", "https://twitter.com/bartkwan");
 			} else if (n == 5) {
-				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "https://scontent-dfw1-1.cdninstagram.com/hphotos-xfa1/t51.2885-19/s150x150/11809808_555221697958216_1274665466_a.jpg");
+				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "./images/geoheadshot.jpg");
 				(0, _jquery2["default"])(".crew-info-name h3").html("Geo Kwan");
 				(0, _jquery2["default"])(".crew-info-name p").html("PR/MARKETING/PRODUCER/BOOKING/CAST");
-				(0, _jquery2["default"])(".crew-info-bottom p").html("Not to be mistaken for David, is immune to the pheromones of South Africa.As deadly as a firefly on a Saturday night, Geo has been known to smack a bitch or two. I love candy.");
+				(0, _jquery2["default"])(".crew-info-bottom p").html("Not to be mistaken for David, is immune to the pheromones of South Africa. As deadly as a firefly on a Saturday night, Geo has been known to smack a bitch or two. I love candy.");
 				(0, _jquery2["default"])(".crew-info-links .instagram").attr("href", "https://instagram.com/geo_antoinette/");
 				(0, _jquery2["default"])(".crew-info-links .youtube").attr("href", "https://www.youtube.com/user/GeovannaAntoinette");
 				(0, _jquery2["default"])(".crew-info-links .twitter").attr("href", "https://twitter.com/Geo_Antoinette");
 			} else if (n == 6) {
-				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "https://scontent-dfw1-1.cdninstagram.com/hphotos-xaf1/t51.2885-19/11848848_1647557055485664_587084931_a.jpg");
+				(0, _jquery2["default"])(".crew-info-img img ").attr("src", "./images/juliaheadshot.jpg");
 				(0, _jquery2["default"])(".crew-info-name h3").html("Julia Chow");
 				(0, _jquery2["default"])(".crew-info-name p").html("CAST/DIRECTOR/PRODUCER");
 				(0, _jquery2["default"])(".crew-info-bottom p").html("Insert info about Hoolia here Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ");
